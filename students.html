@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alunos - Sistema de Monitoria</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Alunos</h1>
+    <nav>
+      <a href="main.html">Horários</a>
+      <a href="absences.html">Faltas</a>
+      <a href="reports.html">Relatórios (PDF)</a>
+      <a href="students.html">Alunos</a>
+    </nav>
+
+    <form id="student-form">
+      <label for="student-name-input">Nome do Aluno:</label>
+      <input type="text" id="student-name-input" required placeholder="Ex: Maria Silva">
+      <label for="student-grade-input">Série:</label>
+      <input type="text" id="student-grade-input" required placeholder="Ex: 1º Ano">
+      <button type="submit">Adicionar Aluno</button>
+    </form>
+
+    <h2>Lista de Alunos</h2>
+    <table id="students-table">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Série</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "index.html";
+    }
+  </script>
+  <script defer src="js/students.js"></script>
+</body>
+                    </html>
